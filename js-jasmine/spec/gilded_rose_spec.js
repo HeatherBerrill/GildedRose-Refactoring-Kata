@@ -95,4 +95,16 @@ describe('Gilded Rose', () => {
     expect(items[0].quality).toBe(0);
     expect(items[0].sellIn).toBe(-1);
   });
+
+  it('should degrade a conjured product by 2 each day, before sellin date ', () => {
+    const gildedRose = new Shop([new Item('Conjured Mana Cake', 5, 4)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(2);
+  });
+
+  it('should degrade a conjured product by 4 each day, after sellin date ', () => {
+    const gildedRose = new Shop([new Item('Conjured Mana Cake', 0, 8)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(4);
+  });
 });
