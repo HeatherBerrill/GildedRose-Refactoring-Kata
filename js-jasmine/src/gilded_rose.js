@@ -39,7 +39,7 @@ class Shop {
 
       //LEGENDARY PRODUCTS
       if (singleItem.name === legendary) {
-        singleItem.quality = singleItem.quality;
+        singleItem.quality = 80;
         singleItem.sellIn = singleItem.sellIn;
 
         // BRIE PRODUCTS
